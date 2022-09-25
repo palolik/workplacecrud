@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "508776454852",
+    "project_id": "workplease-19076",
+    "storage_bucket": "workplease-19076.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508776454852:android:3d726d9260f95081e98791",
+        "android_client_info": {
+          "package_name": "com.academya.tutoraa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508776454852-d0uj4gndhpclh5t507cftmi1bjh7mb0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACtD-YRQGLkoZyH0b7J_Ty0HjIUS1lHFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508776454852-d0uj4gndhpclh5t507cftmi1bjh7mb0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
