@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:webcheck2/pages/coachingpages/list_student_page.dart';
+import 'package:webcheck2/pages/coachingpages/list_coaching_page.dart';
 import 'package:flutter/material.dart';
 
 class AddStudentPage extends StatefulWidget {

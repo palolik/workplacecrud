@@ -2,17 +2,17 @@
 // this is the working home page
 //
 import 'package:flutter/material.dart';
-import 'package:webcheck2/pages/coachingpages/list_coaching_page.dart';
-import 'package:webcheck2/pages/coachingpages/add_coaching_page.dart';
+import 'package:webcheck2/pages/teacherspages/add_teacher_page.dart';
+import 'package:webcheck2/pages/teacherspages/list_teacher_page.dart';
 
-class HomePages extends StatefulWidget {
-  HomePages({Key? key}) : super(key: key);
+class TeacherHome extends StatefulWidget {
+  TeacherHome({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  StudenthomeState createState() => StudenthomeState();
 }
 
-class _HomePageState extends State<HomePages> {
+class StudenthomeState extends State<TeacherHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,13 +20,13 @@ class _HomePageState extends State<HomePages> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Coaching Database'),
+            Text('Teachers Database'),
             ElevatedButton(
               onPressed: () => {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => AddStudentPage(),
+                    builder: (context) => AddTeachersPage(),
                   ),
                 )
               },
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePages> {
         ),
         backgroundColor: Colors.redAccent,
       ),
-      body: ListStudentPage(),
+      body: ListTeacherPage(),
     );
   }
 }

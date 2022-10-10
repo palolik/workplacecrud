@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:webcheck2/pages/update_student_page.dart';
-import 'package:webcheck2/pages/coachingpages/add_student_page.dart';
+import 'package:webcheck2/pages/studentspages/update_student_page.dart';
+import 'package:webcheck2/pages/studentspages/add_student_page.dart';
 
 class addstudent extends StatefulWidget {
   const addstudent({super.key});
@@ -28,19 +28,19 @@ class ListStudentPage extends StatefulWidget {
 
 class _ListStudentPageState extends State<ListStudentPage> {
   final Stream<QuerySnapshot> studentsStream = FirebaseFirestore.instance
-      .collection('coachings')
+      .collection('students')
       .snapshots(); //the collection name goes here
 
   // For Deleting User
   CollectionReference coachinglist = FirebaseFirestore.instance
-      .collection('coachings'); // collection name goes here
+      .collection('students'); // collection name goes here
   Future<void> deleteUser(id) {
     // print("User Deleted $id");
     return coachinglist
         .doc(id)
         .delete()
         // ignore: avoid_print
-        .then((value) => print('User Deleted'))
+        .then((value) => print('Student data Deleted'))
         // ignore: avoid_print
         .catchError((error) => print('Failed to Delete user: $error'));
   }
@@ -89,7 +89,97 @@ class _ListStudentPageState extends State<ListStudentPage> {
                             color: Colors.redAccent,
                             child: const Center(
                               child: Text(
-                                'Coaching',
+                                'Name',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        TableCell(
+                          // refers to the cell of  that row
+                          child: Container(
+                            color: Colors.redAccent,
+                            child: const Center(
+                              child: Text(
+                                'User name',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        TableCell(
+                          // refers to the cell of  that row
+                          child: Container(
+                            color: Colors.redAccent,
+                            child: const Center(
+                              child: Text(
+                                'Phone',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        TableCell(
+                          // refers to the cell of  that row
+                          child: Container(
+                            color: Colors.redAccent,
+                            child: const Center(
+                              child: Text(
+                                'Email',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        TableCell(
+                          // refers to the cell of  that row
+                          child: Container(
+                            color: Colors.redAccent,
+                            child: const Center(
+                              child: Text(
+                                'Class',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        TableCell(
+                          // refers to the cell of  that row
+                          child: Container(
+                            color: Colors.redAccent,
+                            child: const Center(
+                              child: Text(
+                                'Gender',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        TableCell(
+                          // refers to the cell of  that row
+                          child: Container(
+                            color: Colors.redAccent,
+                            child: const Center(
+                              child: Text(
+                                'City',
                                 style: TextStyle(
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.bold,
@@ -104,35 +194,35 @@ class _ListStudentPageState extends State<ListStudentPage> {
                             color: Colors.redAccent,
                             child: const Center(
                               child: Text(
-                                'classes',
-                                style: TextStyle(
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        TableCell(
-                          child: Container(
-                            color: Colors.redAccent,
-                            child: const Center(
-                              child: Text(
-                                'subject',
-                                style: TextStyle(
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        TableCell(
-                          child: Container(
-                            color: Colors.redAccent,
-                            child: const Center(
-                              child: Text(
                                 'Address',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        TableCell(
+                          child: Container(
+                            color: Colors.redAccent,
+                            child: const Center(
+                              child: Text(
+                                'Religion',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        TableCell(
+                          child: Container(
+                            color: Colors.redAccent,
+                            child: const Center(
+                              child: Text(
+                                'Age',
                                 style: TextStyle(
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.bold,
@@ -160,10 +250,26 @@ class _ListStudentPageState extends State<ListStudentPage> {
                     for (var i = 0; i < storedocs.length; i++) ...[
                       // it sets the number of rows , the more data is added the more rows are shown
                       TableRow(
+                        // value boxes starts with this one
                         children: [
                           TableCell(
                             child: Center(
-                                child: Text(storedocs[i]['coaching'],
+                                child: Text(storedocs[i]['name'],
+                                    style: const TextStyle(fontSize: 12.0))),
+                          ),
+                          TableCell(
+                            child: Center(
+                                child: Text(storedocs[i]['user name'],
+                                    style: const TextStyle(fontSize: 12.0))),
+                          ),
+                          TableCell(
+                            child: Center(
+                                child: Text(storedocs[i]['phone'],
+                                    style: const TextStyle(fontSize: 12.0))),
+                          ),
+                          TableCell(
+                            child: Center(
+                                child: Text(storedocs[i]['email'],
                                     style: const TextStyle(fontSize: 12.0))),
                           ),
                           TableCell(
@@ -173,12 +279,27 @@ class _ListStudentPageState extends State<ListStudentPage> {
                           ),
                           TableCell(
                             child: Center(
-                                child: Text(storedocs[i]['subject'],
+                                child: Text(storedocs[i]['gender'],
+                                    style: const TextStyle(fontSize: 12.0))),
+                          ),
+                          TableCell(
+                            child: Center(
+                                child: Text(storedocs[i]['city'],
                                     style: const TextStyle(fontSize: 12.0))),
                           ),
                           TableCell(
                             child: Center(
                                 child: Text(storedocs[i]['address'],
+                                    style: const TextStyle(fontSize: 12.0))),
+                          ),
+                          TableCell(
+                            child: Center(
+                                child: Text(storedocs[i]['religion'],
+                                    style: const TextStyle(fontSize: 12.0))),
+                          ),
+                          TableCell(
+                            child: Center(
+                                child: Text(storedocs[i]['age'],
                                     style: const TextStyle(fontSize: 12.0))),
                           ),
                           TableCell(
@@ -197,7 +318,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
                                   },
                                   icon: const Icon(
                                     Icons.edit,
-                                    color: Colors.blue,
+                                    color: Colors.red,
                                   ),
                                 ),
                                 IconButton(
@@ -206,7 +327,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
                                   }, // this one delets the user from the datatable
                                   icon: const Icon(
                                     Icons.delete,
-                                    color: Colors.blueAccent,
+                                    color: Colors.red,
                                   ),
                                 ),
                               ],

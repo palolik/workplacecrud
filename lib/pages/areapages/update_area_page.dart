@@ -38,6 +38,7 @@ class _UpdateStudentPageState extends State<UpdateStudentPage> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Update Student"),
+          backgroundColor: Colors.redAccent,
         ),
         body: Form(
             key: _formKey,
@@ -137,7 +138,6 @@ class _UpdateStudentPageState extends State<UpdateStudentPage> {
                           initialValue: address,
                           autofocus: false,
                           onChanged: (value) => address = value,
-                          obscureText: true,
                           decoration: const InputDecoration(
                             labelText: 'address: ',
                             labelStyle: TextStyle(fontSize: 20.0),
@@ -169,6 +169,8 @@ class _UpdateStudentPageState extends State<UpdateStudentPage> {
                               'Update',
                               style: TextStyle(fontSize: 18.0),
                             ),
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.redAccent),
                           ),
                           ElevatedButton(
                             onPressed: () => {},
@@ -176,8 +178,8 @@ class _UpdateStudentPageState extends State<UpdateStudentPage> {
                               'Reset',
                               style: TextStyle(fontSize: 18.0),
                             ),
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.blueGrey),
+                            style:
+                                ElevatedButton.styleFrom(primary: Colors.red),
                           ),
                         ],
                       )

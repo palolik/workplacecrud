@@ -2,17 +2,17 @@
 // this is the working home page
 //
 import 'package:flutter/material.dart';
-import 'package:webcheck2/pages/coachingpages/list_coaching_page.dart';
-import 'package:webcheck2/pages/coachingpages/add_coaching_page.dart';
+import 'package:webcheck2/pages/studentspages/list_student_page.dart';
+import 'package:webcheck2/pages/studentspages/add_student_page.dart';
 
-class HomePages extends StatefulWidget {
-  HomePages({Key? key}) : super(key: key);
+class StudentHome extends StatefulWidget {
+  StudentHome({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  StudenthomeState createState() => StudenthomeState();
 }
 
-class _HomePageState extends State<HomePages> {
+class StudenthomeState extends State<StudentHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePages> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Coaching Database'),
+            Text('Student Database'),
             ElevatedButton(
               onPressed: () => {
                 Navigator.push(
